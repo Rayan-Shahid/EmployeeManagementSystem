@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
 
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
@@ -9,8 +9,7 @@ const Login = () => {
 
     const submitted = (e) => {
         e.preventDefault();
-        console.log('Email: ', email);
-        console.log('Password: ', password)
+        handleLogin(email, password);
 
         setemail("")
         setpassword("")

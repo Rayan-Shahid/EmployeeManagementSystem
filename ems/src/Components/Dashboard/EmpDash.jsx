@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../../Others/Header'
-import TaskNumbers from '../../Others/TaskNumbers'
-import Tasklist from '../../Tasklist/Tasklist'
+import Header from '../Others/Header'
+import TaskNumbers from '../Others/TaskNumbers'
+import Tasklist from '../Tasklist/Tasklist'
 
 const EmpDash = () => {
     return (
