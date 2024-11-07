@@ -15,12 +15,16 @@ function App() {
   // }, [])
 
   const [user, setuser] = useState(null)
+  const authdata = useContext(contextforAuth);
+
+
+
 
   const handleLogin = (email, password) => {
     if (email == "admin@ceo.com" && password == 123) {
       setuser('admin')
     }
-    else if (email == "emp1@gmail.com" && password == 123) {
+    else if (authdata && authdata.employee.find((e) => email == e.email && password == e.password)) {
       setuser('user')
     }
     else {

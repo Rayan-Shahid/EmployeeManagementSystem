@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { getLocalstorage } from '../Utils/Localstorage';
 
 export const contextforAuth = createContext();
@@ -6,13 +6,17 @@ export const contextforAuth = createContext();
 
 const Authcontext = ({ children }) => {
 
-
     const [userdata, setuserdata] = useState(null)
-    const data = getLocalstorage();
-    console.log(data)
+    useEffect(() => {
+
+        const { employee, admin } = getLocalstorage()
+        setuserdata({ employee, admin })
+
+    }, [])
+
 
     return (
-        <contextforAuth.Provider value={"flaxtasks"}>
+        <contextforAuth.Provider value={userdata}>
             {children}
         </contextforAuth.Provider>
     )

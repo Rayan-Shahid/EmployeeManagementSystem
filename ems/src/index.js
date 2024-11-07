@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Authcontext from './Context/Authcontext';
 import TaskContext from './Context/TaskContext';
+import { setLocalstorage } from './Utils/Localstorage';
+
+setLocalstorage();
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
