@@ -57,6 +57,7 @@ function App() {
       ) : (
         <EmpDash data={loggedUser} onLogout={handleLogout} />
       )}
+
     </div>
   );
 }
