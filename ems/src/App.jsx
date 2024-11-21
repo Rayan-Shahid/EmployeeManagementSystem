@@ -53,9 +53,9 @@ function App() {
       {!user ? (
         <Login handleLogin={handleLogin} />
       ) : user === 'admin' ? (
-        <AdminDash onLogout={handleLogout} />
+        <AdminDash changeUser={setuser} onLogout={handleLogout} />
       ) : (
-        <EmpDash data={loggedUser} onLogout={handleLogout} />
+        <EmpDash changeUser={setuser} data={loggedUser} onLogout={handleLogout} />
       )}
 
     </div>
