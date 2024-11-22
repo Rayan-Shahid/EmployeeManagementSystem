@@ -13,19 +13,24 @@ const Createtask = () => {
     useEffect(() => {
         console.log(tasks);
     }, [tasks]);
+
     const formhandle = (e) => {
         e.preventDefault()
-        // console.log(title, date, assign, category, description)
-
         settasks({ title, date, category, description, newTask: true, failed: false, completed: false, accepted: false })
+        const data = JSON.parse(localStorage.getItem('employee'))
+        data.forEach(function (elem) {
+            if (elem.name == assign)
+                elem.tasks.push(tasks)
+            console.log(elem.tasks)
 
+        })
+        localStorage.setItem('employee', data)
 
-
-        // settitle('')
-        // setdate('')
-        // setassign('')
-        // setcategory('')
-        // setdescription('')
+        settitle('')
+        setdate('')
+        setassign('')
+        setcategory('')
+        setdescription('')
 
     }
 
